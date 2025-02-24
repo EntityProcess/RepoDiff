@@ -1,8 +1,21 @@
 {
   "tiktoken_model": "gpt-4o",
-  "diffs": [
-    ["-U50", "--ignore-all-space", "--", "*.cs", ":!*Test*.cs", ":!*.xml"],
-    ["-U20", "--ignore-all-space", "--", "*Test*.cs", ":!*.xml"],
-    ["-U5", "--ignore-all-space", "--", "*.xml"]
+  "filters": [
+    {
+      "file_pattern": "*.cs",
+      "context_lines": 999
+    },
+    {
+      "file_pattern": "*Test*.cs",
+      "context_lines": 200
+    },
+    {
+      "file_pattern": "*.xml",
+      "context_lines": 10
+    },
+    {
+      "file_pattern": "*",
+      "context_lines": 3
+    }
   ]
 }
